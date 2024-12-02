@@ -1,0 +1,73 @@
+/**
+Theme Name: Referrify
+Author: Pranay Pratap Singh
+Author URI: #
+Description: Referrify where you finds jobs and earn referral 
+Version: 1.0.0  
+Text Domain: referrify
+Template: astra
+*/
+
+#menu-item-982 a:before{
+    font-family: "Font Awesome 6 Free"; /* Adjust for the version of Font Awesome you're using */
+    content: "\2b"; /* Unicode for home icon */
+    font-weight: 900; /* Font weight for Font Awesome icons */
+    margin-right: 8px; /* Add some space between the icon and text */
+}
+
+.ast-header-button-1[data-section*="section-hb-button-"] .ast-builder-button-wrap .ast-custom-button:before {
+    font-family: "Font Awesome 6 Free"; /* Adjust for the version of Font Awesome you're using */
+    content: "\2b"; /* Unicode for home icon */
+    font-weight: 900; /* Font weight for Font Awesome icons */
+    margin-right: 8px;
+    font-size: 16px;
+}
+
+.login-button-header a:before{
+    font-family: "Font Awesome 6 Free"; /* Adjust for the version of Font Awesome you're using */
+    content: "\f508"; /* Unicode for home icon */
+    font-weight: 900; /* Font weight for Font Awesome icons */
+    margin-right: 8px;
+    font-size: 16px;
+}
+
+.footer-widget-area[data-section="sidebar-widgets-footer-widget-2"] > .widget > nav ul >li ,
+.footer-widget-area[data-section="sidebar-widgets-footer-widget-3"] > .widget > nav ul >li,
+.footer-widget-area[data-section="sidebar-widgets-footer-widget-4"] > .widget > nav ul >li {
+    margin-top: 12px;
+}
+
+
+.footer-contact-info{
+    display: flex;
+    flex-wrap: nowrap;
+}
+.footer-contact-info i{
+ margin-right:15px;
+}
+
+.quick-category-banner{
+    padding:6px 12px;
+    color:white;
+    background-color: #fcc2a336;
+    margin-right:5px;
+    margin-bottom: 5px;
+    font-size: 13px;
+    text-transform:uppercase;
+}
+
+.svg-icon .elementor-widget-container .elementor-icon-box-wrapper .elementor-icon-box-icon span svg, .svg-icon .elementor-widget-container .elementor-icon-box-wrapper .elementor-icon-box-icon span svg g path {
+    fill:var(--e-global-color-astglobalcolor0);
+}
+.quick-category-banner:hover{
+    color: white;
+    background-color: rgba(255, 233, 222, 0.263);
+  
+}
+
+@media screen and (min-width: 880px) {
+    .footer-contact-info i{
+        margin-right:10px;
+       }
+       
+  }

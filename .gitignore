@@ -11,6 +11,7 @@
 /wp-content/plugins/index.php
 /wp-content/themes/index.php
 /wp-includes/
+/wp-content/plugins/
 /index.php
 /license.txt
 /readme.html
@@ -19,6 +20,12 @@
 
 # Configuration
 wp-config.php
+
+# Ignore everything in the themes directory
+wp-content/themes/*
+
+# Exclude the astra-child theme from being ignored
+!wp-content/themes/astra-child/
 
 # Example themes
 /wp-content/themes/twenty*/

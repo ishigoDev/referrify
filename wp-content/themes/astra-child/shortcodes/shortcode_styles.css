@@ -1,0 +1,123 @@
+.search-job-shortcode > div > div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.search-job-container {
+    width: 70%;
+    height: 130px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 5px 30px rgba(7, 36, 86, 0.075);
+    background-color: white;
+    border-radius: 0.5px;
+}
+
+form.search-job {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.search-job > div  {
+    width:37%;
+    margin-right: 15px;
+    border-bottom:1px solid var(--ast-border-color);
+    display: flex;
+    height: 100%;
+}
+.search-job > div > input {
+    width: 100%;
+    border: 0;
+}
+
+.search-job-dv:before{
+    font-family: "Font Awesome 6 Free"; /* Adjust for the version of Font Awesome you're using */
+    content: '\f002'; /* Unicode for home icon */
+    font-weight: 900; /* Font weight for Font Awesome icons */
+    flex: 0 0 1.2rem;
+    color:#808080a6;
+    font-size: 20px;
+    line-height: 3rem;
+}
+
+.search-job > button {
+    width: 16%;
+    padding: 18px;
+}
+
+.search-job > button span:after{
+    font-family: "Font Awesome 6 Free"; /* Adjust for the version of Font Awesome you're using */
+    content: '\f178';
+    margin-left:10px;
+}
+
+.discover-slick .elementor-widget-container .elementor-shortcode{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.discover-role-container{
+    width: 75%;
+    height:100%;
+    border:1px solid #E7E7F1;
+    border-radius:20px; 
+    position: relative;
+}
+.discover-role-container .slick-next.slick-arrow{
+    position:absolute;
+    left:98%;
+}
+.discover-role-container .slick-prev:before,.discover-role-container .slick-next:before{
+    color: grey;
+    font-size:30px;
+} 
+
+.discover-role-container .slick-prev.slick-arrow{
+    position:absolute;
+    left:-19px;
+}
+
+.discover-role-container ul.slick-dots{
+    bottom:15px;
+} 
+
+.slick-initialized .discover-role-group.slick-slide{
+    display: flex;
+}
+
+.discover-role-group{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 2px;
+    flex-wrap: wrap;
+}
+
+.discover-role-group .role{
+    width: 40%;
+    height: 70px;
+    border: 1px solid #E7E7F1;
+    border-radius: 16px;
+    margin-right: 12px;
+    margin-bottom: 22px;
+    cursor:pointer;
+    padding:10px 16px;
+}
+
+.role-jobs{
+    font-size: 14px;
+    color:#808080de;
+}
+
+.discover-role-link{
+    font-size: 16px;
+    font-weight: 700;
+    color: black;
+}
