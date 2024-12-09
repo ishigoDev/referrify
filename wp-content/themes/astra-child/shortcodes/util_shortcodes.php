@@ -30,6 +30,7 @@ function banner_category_buttons_cb(){
             'number'     => 5, 
         )
     );
+    ?><div class="job-category-nav-container"><?php
      if ( ! empty( $categories ) && ! is_wp_error( $categories ) ) {
         foreach ( $categories as $category ) {
             
@@ -37,7 +38,9 @@ function banner_category_buttons_cb(){
           <a href="<?php echo esc_url( get_term_link( $category ) ); ?>" class="quick-category-banner"><?php echo esc_html( $category->name ); ?></a>
         <?php
         }
-     }
+     }?>
+     </div>
+     <?php
     return ob_get_clean();
 }
 
