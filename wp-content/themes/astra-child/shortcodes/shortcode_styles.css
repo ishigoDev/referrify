@@ -1,172 +1,228 @@
 .search-job-shortcode > div > div {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .search-job-container {
-    width: 70%;
-    height: 130px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    box-shadow: 0 5px 30px rgba(7, 36, 86, 0.075);
-    background-color: white;
-    border-radius: 0.5px;
+  width: 70%;
+  height: 130px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 5px 30px rgba(7, 36, 86, 0.075);
+  background-color: white;
+  border-radius: 0.5px;
 }
 
 form.search-job {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
 }
 
-.search-job > div  {
-    width:37%;
-    margin-right: 15px;
-    border-bottom:1px solid var(--ast-border-color);
-    display: flex;
-    height: 100%;
+.search-job > div {
+  width: 37%;
+  margin-right: 15px;
+  border-bottom: 1px solid var(--ast-border-color);
+  display: flex;
+  height: 100%;
 }
 .search-job > div > input {
-    width: 100%;
-    border: 0;
+  width: 100%;
+  border: 0;
 }
 
-.search-job-dv:before{
-    font-family: "Font Awesome 6 Free"; /* Adjust for the version of Font Awesome you're using */
-    content: '\f002'; /* Unicode for home icon */
-    font-weight: 900; /* Font weight for Font Awesome icons */
-    flex: 0 0 1.2rem;
-    color:#808080a6;
-    font-size: 20px;
-    line-height: 3rem;
+.search-job-dv:before {
+  font-family: "Font Awesome 6 Free"; /* Adjust for the version of Font Awesome you're using */
+  content: "\f002"; /* Unicode for home icon */
+  font-weight: 900; /* Font weight for Font Awesome icons */
+  flex: 0 0 1.2rem;
+  color: #808080a6;
+  font-size: 20px;
+  line-height: 3rem;
 }
 
 .search-job > button {
-    width: 16%;
-    padding: 18px;
+  width: 16%;
+  padding: 18px;
 }
 
-.search-job > button span:after{
-    font-family: "Font Awesome 6 Free"; /* Adjust for the version of Font Awesome you're using */
-    content: '\f178';
-    margin-left:10px;
+.search-job > button span:after {
+  font-family: "Font Awesome 6 Free"; /* Adjust for the version of Font Awesome you're using */
+  content: "\f178";
+  margin-left: 10px;
 }
 
-.discover-slick .elementor-widget-container .elementor-shortcode{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.discover-slick .elementor-widget-container .elementor-shortcode {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.discover-role-container{
-    width: 75%;
-    height:100%;
-    border:1px solid #E7E7F1;
-    border-radius:20px; 
-    position: relative;
+.discover-role-container {
+  width: 75%;
+  height: 100%;
+  border: 1px solid #e7e7f1;
+  border-radius: 20px;
+  position: relative;
 }
-.discover-role-container .slick-next.slick-arrow{
-    position:absolute;
-    left:98%;
+.discover-role-container .slick-next.slick-arrow {
+  position: absolute;
+  left: 98%;
 }
-.discover-role-container .slick-prev:before,.discover-role-container .slick-next:before{
-    color: grey;
-    font-size:30px;
-} 
-
-.discover-role-container .slick-prev.slick-arrow{
-    position:absolute;
-    left:-19px;
+.discover-role-container .slick-prev:before,
+.discover-role-container .slick-next:before {
+  color: grey;
+  font-size: 30px;
 }
 
-.discover-role-container ul.slick-dots{
-    bottom:15px;
-} 
-
-.slick-initialized .discover-role-group.slick-slide{
-    display: flex;
+.discover-role-container .slick-prev.slick-arrow {
+  position: absolute;
+  left: -19px;
 }
 
-.discover-role-group{
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 40px 2px;
-    flex-wrap: wrap;
+.discover-role-container ul.slick-dots {
+  bottom: 15px;
 }
 
-.discover-role-group .role{
-    width: 40%;
-    height: 70px;
-    border: 1px solid #E7E7F1;
-    border-radius: 16px;
-    margin-left: 12px;
-    margin-bottom: 22px;
-    cursor:pointer;
-    padding:10px 16px;
+.slick-initialized .discover-role-group.slick-slide {
+  display: flex;
 }
 
-.role-jobs{
-    font-size: 14px;
-    color:#808080de;
+.discover-role-group {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 2px;
+  flex-wrap: wrap;
 }
 
-.discover-role-link{
-    font-size: 16px;
-    font-weight: 700;
-    color: black;
+.discover-role-group .role {
+  width: 40%;
+  height: 70px;
+  border: 1px solid #e7e7f1;
+  border-radius: 16px;
+  margin-left: 12px;
+  margin-bottom: 22px;
+  cursor: pointer;
+  padding: 10px 16px;
 }
-.job-category-nav-container{
-    display: flex;
-    flex-wrap: wrap;
+
+.role-jobs {
+  font-size: 14px;
+  color: #808080de;
 }
+
+.discover-role-link {
+  font-size: 16px;
+  font-weight: 700;
+  color: black;
+}
+.job-category-nav-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.register-form-container {
+  max-width: 550px;
+  margin: 0 auto;
+  padding: 30px 0;
+  & .woocommerce-privacy-policy-text p {
+    margin: 14px 0;
+  }
+}
+
+.register-form-container > .woocommerce-notices-wrapper {
+  margin-top: 25px;
+}
+
+.heading-underline {
+  background-color: #f15808;
+  width: 27%;
+  height: 3px;
+  margin-top: 5px;
+}
+.shortcode-register-snippet {
+  border: 1px solid var(--ast-border-color);
+  padding: 20px;
+  margin: 2rem 0;
+}
+
+.register-form-container .woocommerce form .password-input {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+}
+.register-form-container .woocommerce form .show-password-input {
+  position: absolute;
+  right: 0.7em;
+  cursor: pointer;
+  top: 0.7em;
+}
+.register-form-container .woocommerce form .show-password-input::after {
+  font-family: WooCommerce;
+  font-weight: 400;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  margin-left: 0.618em;
+  content: "\e010";
+  text-decoration: none;
+}
+
 @media only screen and (max-width: 1024px) {
-    .search-job-container {
-        width: 100%;
-    }
-    .search-job > button {
-        width: 17%;
-    }
+  .search-job-container {
+    width: 100%;
   }
-  @media only screen and (max-width:850px) {
-    .discover-role-container{
-        width: 85%;
-    }
-    .discover-role-group .role{
-        width: 45%;
-        height: 90px;
-        margin-left: 6px;
-    }
-    .role .discover-role-link{
-        font-size: 14px;
-    }
-    .role .role-jobs{
-        font-size: 12px;
-        margin-bottom: 8px;
-    }
-    .discover-role-group .role{
-        margin-bottom: 16px;
-    }
+  .search-job > button {
+    width: 26%;
   }
-  @media only screen and (max-width: 500px) {
-    .search-job-container {
-        min-height: 200px;
-    }
-    form.search-job{
-        flex-direction: column;
-    }
-    .search-job > div{
-        width: 85%;
-        margin-top: 10px;
-    }
-    .search-job > button{
-        width: 90%;
-        margin-top: 10px;
-    }
+}
+@media only screen and (max-width: 850px) {
+  .discover-role-container {
+    width: 85%;
   }
-  
+  .discover-role-group .role {
+    width: 45%;
+    height: 90px;
+    margin-left: 6px;
+  }
+  .role .discover-role-link {
+    font-size: 14px;
+  }
+  .role .role-jobs {
+    font-size: 12px;
+    margin-bottom: 8px;
+  }
+  .discover-role-group .role {
+    margin-bottom: 16px;
+  }
+  .heading-underline {
+    width: 23%;
+  }
+}
+@media only screen and (max-width: 500px) {
+  .search-job-container {
+    min-height: 200px;
+  }
+  form.search-job {
+    flex-direction: column;
+  }
+  .search-job > div {
+    width: 85%;
+    margin-top: 10px;
+  }
+  .search-job > button {
+    width: 90%;
+    margin-top: 10px;
+  }
+  .heading-underline {
+    width: 26%;
+  }
+}

@@ -1,0 +1,36 @@
+/* login form css */
+.entry-content[data-ast-blocks-layout] > .login-container {
+  max-width: 550px;
+  padding: 30px 0;
+}
+.entry-content .login-container h3 {
+  margin-bottom: 0px;
+}
+
+.login-container .heading-underline {
+  width: 18.5%;
+}
+
+.woocommerce-page form .form-row .woocommerce-form-login__rememberme {
+  margin-bottom: 10px;
+  display: flex;
+  & .woocommerce-form__input-checkbox {
+    margin-right: 5px;
+  }
+}
+.woocommerce-LostPassword.lost_password {
+  margin-left: 2px;
+  margin-top: 10px;
+}
+
+@media only screen and (max-width: 850px) {
+  .login-container .heading-underline {
+    width: 15.5%;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .login-container .heading-underline {
+    width: 19%;
+  }
+}
