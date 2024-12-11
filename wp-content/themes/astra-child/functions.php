@@ -18,6 +18,7 @@ define('CHILD_THEME_ASTRA_CHILD_VERSION', '1.0.1');
 require_once get_stylesheet_directory() . '/shortcodes/util_shortcodes.php';
 require_once get_stylesheet_directory() . '/shortcodes/jobs_cat_carousel.php';
 require_once get_stylesheet_directory() . '/shortcodes/register_form.php';
+require_once get_stylesheet_directory() . '/utility/woocommerce_change.php';
 
 
 
@@ -50,13 +51,3 @@ if (! function_exists('header_scripts')) {
 	}
 }
 add_action('wp_head', 'header_scripts');
-
-// Separate Page for register
-add_action('template_redirect', 'redirect_logged_in_users_to_my_account');
-function redirect_logged_in_users_to_my_account()
-{
-	if (is_page('register') && is_user_logged_in()) {
-		wp_redirect(get_permalink(get_option('woocommerce_myaccount_page_id')));
-		exit;
-	}
-}
