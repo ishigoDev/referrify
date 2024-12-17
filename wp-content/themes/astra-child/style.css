@@ -8,66 +8,165 @@ Text Domain: referrify
 Template: astra
 */
 
-#menu-item-982 a:before{
-    font-family: "Font Awesome 6 Free"; /* Adjust for the version of Font Awesome you're using */
-    content: "\2b"; /* Unicode for home icon */
-    font-weight: 900; /* Font weight for Font Awesome icons */
-    margin-right: 8px; /* Add some space between the icon and text */
+#menu-item-982 a:before {
+  font-family: "Font Awesome 6 Free"; /* Adjust for the version of Font Awesome you're using */
+  content: "\2b"; /* Unicode for home icon */
+  font-weight: 900; /* Font weight for Font Awesome icons */
+  margin-right: 8px; /* Add some space between the icon and text */
 }
 
-.ast-header-button-1[data-section*="section-hb-button-"] .ast-builder-button-wrap .ast-custom-button:before {
-    font-family: "Font Awesome 6 Free"; /* Adjust for the version of Font Awesome you're using */
-    content: "\2b"; /* Unicode for home icon */
-    font-weight: 900; /* Font weight for Font Awesome icons */
-    margin-right: 8px;
-    font-size: 16px;
+.ast-header-button-1[data-section*="section-hb-button-"]
+  .ast-builder-button-wrap
+  .ast-custom-button:before {
+  font-family: "Font Awesome 6 Free"; /* Adjust for the version of Font Awesome you're using */
+  content: "\2b"; /* Unicode for home icon */
+  font-weight: 900; /* Font weight for Font Awesome icons */
+  margin-right: 8px;
+  font-size: 16px;
 }
 
-.login-button-header a:before{
-    font-family: "Font Awesome 6 Free"; /* Adjust for the version of Font Awesome you're using */
-    content: "\f508"; /* Unicode for home icon */
-    font-weight: 900; /* Font weight for Font Awesome icons */
-    margin-right: 8px;
-    font-size: 16px;
+.login-button-header a:before {
+  font-family: "Font Awesome 6 Free"; /* Adjust for the version of Font Awesome you're using */
+  content: "\f508"; /* Unicode for home icon */
+  font-weight: 900; /* Font weight for Font Awesome icons */
+  margin-right: 8px;
+  font-size: 16px;
 }
 
-.footer-widget-area[data-section="sidebar-widgets-footer-widget-2"] > .widget > nav ul >li ,
-.footer-widget-area[data-section="sidebar-widgets-footer-widget-3"] > .widget > nav ul >li,
-.footer-widget-area[data-section="sidebar-widgets-footer-widget-4"] > .widget > nav ul >li {
-    margin-top: 12px;
+.footer-widget-area[data-section="sidebar-widgets-footer-widget-2"]
+  > .widget
+  > nav
+  ul
+  > li,
+.footer-widget-area[data-section="sidebar-widgets-footer-widget-3"]
+  > .widget
+  > nav
+  ul
+  > li,
+.footer-widget-area[data-section="sidebar-widgets-footer-widget-4"]
+  > .widget
+  > nav
+  ul
+  > li {
+  margin-top: 12px;
 }
 
-
-.footer-contact-info{
-    display: flex;
-    flex-wrap: nowrap;
+.footer-contact-info {
+  display: flex;
+  flex-wrap: nowrap;
 }
-.footer-contact-info i{
- margin-right:15px;
-}
-
-.quick-category-banner{
-    padding:6px 12px;
-    color:white;
-    background-color: #fcc2a336;
-    margin-right:5px;
-    margin-bottom: 5px;
-    font-size: 13px;
-    text-transform:uppercase;
+.footer-contact-info i {
+  margin-right: 15px;
 }
 
-.svg-icon .elementor-widget-container .elementor-icon-box-wrapper .elementor-icon-box-icon span svg, .svg-icon .elementor-widget-container .elementor-icon-box-wrapper .elementor-icon-box-icon span svg g path {
-    fill:var(--e-global-color-astglobalcolor0);
+.quick-category-banner {
+  padding: 6px 12px;
+  color: white;
+  background-color: #fcc2a336;
+  margin-right: 5px;
+  margin-bottom: 5px;
+  font-size: 13px;
+  text-transform: uppercase;
 }
-.quick-category-banner:hover{
-    color: white;
-    background-color: rgba(255, 233, 222, 0.263);
-  
+
+.svg-icon
+  .elementor-widget-container
+  .elementor-icon-box-wrapper
+  .elementor-icon-box-icon
+  span
+  svg,
+.svg-icon
+  .elementor-widget-container
+  .elementor-icon-box-wrapper
+  .elementor-icon-box-icon
+  span
+  svg
+  g
+  path {
+  fill: var(--e-global-color-astglobalcolor0);
+}
+.quick-category-banner:hover {
+  color: white;
+  background-color: rgba(255, 233, 222, 0.263);
+}
+
+/* woocommerce styles */
+
+.woocommerce-page .site-main ul.products li.product {
+  height: 170px;
+  box-shadow: 0 5px 30px rgba(7, 36, 86, 0.075);
+  padding: 25px;
+}
+.woocommerce ul.products li.product,
+.woocommerce-page ul.products li.product {
+  flex-direction: row;
+}
+.woocommerce ul.products li.product .astra-shop-thumbnail-wrap {
+  margin-left: -3rem;
+  flex: 0 0 6.25rem;
+  width: 6.25rem;
+  margin-right: 1rem;
+}
+.woocommerce ul.products li.product .astra-shop-summary-wrap {
+  flex: 0 0 70%;
+  padding-left: 15px;
+}
+.woocommerce ul.products li.product .ast-shop-footer {
+  flex: 0 0 20%;
+}
+.woocommerce ul.products li.product .woocommerce-loop-product__link img,
+.woocommerce-page ul.products li.product .woocommerce-loop-product__link img {
+  height: 100px;
+}
+.woocommerce-js ul.products li.product .woocommerce-loop-product__title,
+.woocommerce-page ul.products li.product .woocommerce-loop-product__title {
+  font-size: 1.5rem;
+}
+.astra-shop-summary-wrap .job-information-container-1,
+.astra-shop-summary-wrap .job-information-container-2 {
+  display: flex;
+  font-size: 13px;
+}
+.astra-shop-summary-wrap .job-information-container-1 .company {
+  margin-right: 8px;
+  display: flex;
+  align-items: center;
+}
+
+.astra-shop-summary-wrap .job-information-container-1 .company a.company-link {
+  color: var(--ast-global-color-2);
+  text-transform: uppercase;
+  letter-spacing: 0.7px;
+  font-weight: 700;
+}
+
+.role-link {
+  color: #1c0d0a87;
+  text-transform: uppercase;
+  letter-spacing: 0.7px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.astra-shop-summary-wrap
+  .job-information-container-1
+  .company
+  a.company-link:hover {
+  color: var(--ast-global-color-0);
+}
+
+.astra-shop-summary-wrap .job-information-container-1 .company::after {
+  content: "";
+  display: block;
+  background-color: var(--ast-global-color-0);
+  border-radius: 50%;
+  width: 4px;
+  height: 4px;
+  margin-left: 0.5rem;
 }
 
 @media screen and (min-width: 880px) {
-    .footer-contact-info i{
-        margin-right:10px;
-       }
-       
+  .footer-contact-info i {
+    margin-right: 10px;
   }
+}
