@@ -121,6 +121,7 @@ Template: astra
 .woocommerce-js ul.products li.product .woocommerce-loop-product__title,
 .woocommerce-page ul.products li.product .woocommerce-loop-product__title {
   font-size: 1.5rem;
+  margin-bottom: 0.3rem;
 }
 .astra-shop-summary-wrap .job-information-container-1,
 .astra-shop-summary-wrap .job-information-container-2 {
@@ -131,6 +132,34 @@ Template: astra
   margin-right: 8px;
   display: flex;
   align-items: center;
+}
+.astra-shop-summary-wrap .job-information-container-2 {
+  margin-top: 14px;
+}
+.astra-shop-summary-wrap .job-information-container-2 .location {
+  flex: 0 0 25%;
+}
+.astra-shop-summary-wrap .job-information-container-2 .type {
+  flex: 0 0 30%;
+}
+.astra-shop-summary-wrap .job-information-container-2 .experience {
+  flex: 0 0 30%;
+}
+.job-icons {
+  width: 20px;
+  margin-bottom: 5px;
+  margin-right: 4px;
+}
+.salary {
+  font-size: 18px;
+  color: #1c0d0a87;
+  font-weight: 600;
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 10px;
+  & .woocommerce-Price-amount {
+    margin-right: 3px;
+  }
 }
 
 .astra-shop-summary-wrap .job-information-container-1 .company a.company-link {
@@ -168,5 +197,61 @@ Template: astra
 @media screen and (min-width: 880px) {
   .footer-contact-info i {
     margin-right: 10px;
+  }
+}
+@media screen and (min-width: 800px) {
+  /* woocommerce styles */
+  .woocommerce ul.products li.product .astra-shop-thumbnail-wrap {
+    margin-left: 0;
+  }
+  .woocommerce ul.products li.product .ast-shop-footer {
+    flex: 0 0 17%;
+  }
+  .woocommerce ul.products li.product .astra-shop-summary-wrap {
+    flex: 0 0 65%;
+  }
+  .salary {
+    margin-right: 0px;
+  }
+}
+
+@media screen and (min-width: 200px) {
+  .woocommerce ul.products li.product,
+  .woocommerce-page ul.products li.product {
+    flex-direction: column;
+  }
+  .woocommerce-page .site-main ul.products li.product {
+    height: 275px;
+    padding: 20px;
+  }
+  .woocommerce ul.products li.product .astra-shop-thumbnail-wrap {
+    margin: 0;
+    width: 7rem;
+    margin-top: -40px;
+  }
+  .woocommerce ul.products li.product .astra-shop-summary-wrap {
+    padding: 0;
+    flex: 0 0 57%;
+  }
+  .salary {
+    justify-content: flex-start;
+    margin-right: 0px;
+    height: 100%;
+    align-items: center;
+  }
+  .woocommerce ul.products li.product .ast-shop-footer {
+    border-top: 1px solid rgba(7, 36, 86, 0.075);
+  }
+  .astra-shop-summary-wrap .job-information-container-2 {
+    flex-wrap: wrap;
+  }
+  .astra-shop-summary-wrap .job-information-container-2 .location {
+    flex: 0 0 100%;
+  }
+  .astra-shop-summary-wrap .job-information-container-2 {
+    & .type,
+    .experience {
+      flex: 0 0 50%;
+    }
   }
 }

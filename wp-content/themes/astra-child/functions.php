@@ -18,7 +18,7 @@ define('CHILD_THEME_ASTRA_CHILD_VERSION', '1.0.1');
 require_once get_stylesheet_directory() . '/shortcodes/util_shortcodes.php';
 require_once get_stylesheet_directory() . '/shortcodes/jobs_cat_carousel.php';
 require_once get_stylesheet_directory() . '/shortcodes/register_form.php';
-require_once get_stylesheet_directory() . '/utility/woocommerce_change.php';
+require_once get_stylesheet_directory() . '/utility/woocommerce_revamp.php';
 
 
 
@@ -51,3 +51,27 @@ if (! function_exists('header_scripts')) {
 	}
 }
 add_action('wp_head', 'header_scripts');
+
+//svg support 
+add_filter('wp_check_filetype_and_ext', function ($data, $file, $filename, $mimes) {
+
+	global $wp_version;
+	if ($wp_version !== '4.7.1') {
+		return $data;
+	}
+
+	$filetype = wp_check_filetype($filename, $mimes);
+
+	return [
+		'ext'             => $filetype['ext'],
+		'type'            => $filetype['type'],
+		'proper_filename' => $data['proper_filename']
+	];
+}, 10, 4);
+
+function cc_mime_types($mimes)
+{
+	$mimes['svg'] = 'image/svg+xml';
+	return $mimes;
+}
+add_filter('upload_mimes', 'cc_mime_types');
