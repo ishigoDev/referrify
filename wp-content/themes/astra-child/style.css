@@ -215,7 +215,7 @@ Template: astra
   }
 }
 
-@media screen and (min-width: 200px) {
+@media screen and (min-width: 200px) and (max-width: 799px) {
   .woocommerce ul.products li.product,
   .woocommerce-page ul.products li.product {
     flex-direction: column;
