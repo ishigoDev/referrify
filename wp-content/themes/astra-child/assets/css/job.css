@@ -1,0 +1,50 @@
+.ast-archive-entry-banner[data-post-type="product"] .ast-container {
+  width: 100%;
+  max-width: 100%;
+  padding: 0;
+}
+.ast-archive-entry-banner[data-post-type="product"] {
+  margin-bottom: 70px;
+}
+.job-banner-container {
+  background-size: cover;
+  background-position: 50% 0%;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 400px;
+  position: relative;
+}
+.job-banner-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+.job-banner-titles {
+  width: 100%;
+  text-align: left;
+  padding: 20px;
+  position: absolute;
+  margin-top: 8%;
+  margin-left: 13%;
+  z-index: 2;
+}
+
+.job-banner-titles h2 {
+  color: var(--e-global-color-astglobalcolor5);
+}
+
+.job-search-container {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  z-index: 2;
+  color: #fff;
+  margin-bottom: -91.6px;
+  margin-left: 15%;
+}

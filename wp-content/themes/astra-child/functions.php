@@ -35,6 +35,7 @@ function child_enqueue_styles()
 	if (!is_user_logged_in() && is_page('my-account')) {
 		wp_enqueue_style('astra-child-theme-login-page-css', get_stylesheet_directory_uri() . '/assets/css/login.css', array('astra-theme-css'), CHILD_THEME_ASTRA_CHILD_VERSION, 'all');
 	}
+	wp_enqueue_style('astra-child-theme-job-page-css', get_stylesheet_directory_uri() . '/assets/css/job.css', array('astra-theme-css'), CHILD_THEME_ASTRA_CHILD_VERSION, 'all');
 }
 
 add_action('wp_enqueue_scripts', 'child_enqueue_styles', 15);
