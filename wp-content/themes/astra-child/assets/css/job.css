@@ -48,3 +48,36 @@
   margin-bottom: -91.6px;
   margin-left: 15%;
 }
+
+@media screen and (max-width: 920px) {
+  .job-banner-container {
+    height: 300px;
+  }
+  .ast-archive-entry-banner[data-post-type="product"] {
+    margin-bottom: 85px;
+  }
+  .job-search-container {
+    width: 90%;
+    margin-left: 5%;
+    margin-bottom: -89px;
+  }
+  .job-banner-titles {
+    margin-left: 0;
+    & h2,
+    span {
+      margin-left: 30px;
+    }
+  }
+}
+
+@media screen and (max-width: 440px) {
+  .job-banner-titles {
+    & h2,
+    span {
+      margin-left: 3px;
+    }
+  }
+  .ast-archive-entry-banner[data-post-type="product"] {
+    margin-bottom: 90px;
+  }
+}
