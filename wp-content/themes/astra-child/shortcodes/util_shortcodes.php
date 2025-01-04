@@ -33,14 +33,14 @@ function banner_category_buttons_cb()
         )
     );
 ?><div class="job-category-nav-container"><?php
-                                                if (! empty($categories) && ! is_wp_error($categories)) {
-                                                    foreach ($categories as $category) {
+                                            if (! empty($categories) && ! is_wp_error($categories)) {
+                                                foreach ($categories as $category) {
 
-                                                ?>
+                                            ?>
                 <a href="<?php echo esc_url(get_term_link($category)); ?>" class="quick-category-banner"><?php echo esc_html($category->name); ?></a>
         <?php
-                                                    }
-                                                } ?>
+                                                }
+                                            } ?>
     </div>
 <?php
     return ob_get_clean();
@@ -78,3 +78,60 @@ function search_job()
 }
 
 add_shortcode('search_job', 'search_job');
+
+/**
+ * *Tooltip ShortCode
+ * @param tooltip_description is required to show approriate tooltip description
+ */
+
+function tooltip_cb($attrs)
+{
+    ob_start();
+?>
+    <span class="tooltip_container">
+        <span><i class="fa-regular fa-circle-question"></i></span>
+        <span class="tooltiptext">
+            <?php if (!isset($attrs['tooltip_description'])) {
+                echo "No Tooltip desc provided.";
+            } else {
+                echo $attrs['tooltip_description'];
+            } ?>
+        </span>
+    </span>
+    <style>
+        .tooltip_container {
+            position: relative;
+        }
+
+        .tooltip_container .tooltiptext {
+            visibility: hidden;
+            background-color: #555;
+            color: #fff;
+            text-align: center;
+            border-radius: 4px;
+            padding: 5px;
+            position: absolute;
+            z-index: 1;
+            bottom: 125%;
+            left: 50%;
+            transform: translateX(-50%);
+            /* Center the tooltip */
+            opacity: 0;
+            transition: opacity 0.3s;
+            font-size: 12px;
+            height: 40px;
+            width: 200px;
+            min-width: 30px;
+            font-weight: 300;
+            line-height: 13px;
+        }
+
+        .tooltip_container:hover .tooltiptext {
+            visibility: visible;
+            opacity: 1;
+        }
+    </style>
+<?php
+    return ob_get_clean();
+}
+add_shortcode('tooltip', 'tooltip_cb');
