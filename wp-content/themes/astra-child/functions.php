@@ -19,6 +19,7 @@ require_once get_stylesheet_directory() . '/shortcodes/util_shortcodes.php';
 require_once get_stylesheet_directory() . '/shortcodes/jobs_cat_carousel.php';
 require_once get_stylesheet_directory() . '/shortcodes/register_form.php';
 require_once get_stylesheet_directory() . '/utility/woocommerce_revamp.php';
+require_once get_stylesheet_directory() . '/shortcodes/post_job_form.php';
 
 
 
@@ -34,6 +35,10 @@ function child_enqueue_styles()
 	wp_enqueue_style('slick-theme-css',  get_stylesheet_directory_uri() . "/assets/slick/slick-theme.css");
 	if (!is_user_logged_in() && is_page('my-account')) {
 		wp_enqueue_style('astra-child-theme-login-page-css', get_stylesheet_directory_uri() . '/assets/css/login.css', array('astra-theme-css'), CHILD_THEME_ASTRA_CHILD_VERSION, 'all');
+	}
+	if (is_user_logged_in() && is_page('post-job')) {
+		wp_enqueue_style( 'select2-css', 'https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css' );
+		wp_enqueue_script( 'select2-js', 'https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.8/js/select2.min.js',array('jquery'),CHILD_THEME_ASTRA_CHILD_VERSION,'defer' );
 	}
 	wp_enqueue_style('astra-child-theme-job-page-css', get_stylesheet_directory_uri() . '/assets/css/job.css', array('astra-theme-css'), CHILD_THEME_ASTRA_CHILD_VERSION, 'all');
 }

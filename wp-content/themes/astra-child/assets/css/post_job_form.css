@@ -1,0 +1,10 @@
+form .referrify-form-field .error{
+    border: 1px solid red;
+    border-color: red;
+}
+form .referrify-form-field .error-message{
+    color: red;
+    font-size: 12px;
+    font-weight: 600;
+    margin-top: 5px;
+}

@@ -49,6 +49,66 @@
   margin-left: 14%;
 }
 
+.post-job-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 15px 20px;
+  background-color: rgba(242,242,242,0.31);
+  width: 1000px;
+  border: 1px solid rgb(242 242 242);
+  border-radius: 5px;
+}
+.post-job-underline-width{
+  width: 100%;
+}
+.referrify-form-field{
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+  position: relative;
+}
+.post-form-body{
+  margin-top: 25px;
+  width: 100%;
+}
+.referrify-label{
+  margin-bottom: 3px;
+  font-weight: 700;
+}
+.required{
+  color: red;
+}
+
+#company-img {
+  opacity: 0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+
+.company-file-upload {
+  display: inline-block;
+  background-color: var(--ast-global-color-0);
+  color: white;
+  padding: 10px 15px;
+  font-size: 16px;
+  border-radius: 1px;
+  cursor: pointer;
+  text-align: center;
+  border: 2px solid transparent;
+  transition: all 0.3s ease;
+  width: 150px;
+}
+
+.referrify-label {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 5px;
+}
+
+
 @media screen and (max-width: 920px) {
   .job-banner-container {
     height: 300px;
