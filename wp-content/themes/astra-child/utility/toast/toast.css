@@ -1,0 +1,211 @@
+.popup {
+    position: fixed;
+    padding: 15px 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    z-index: 1000;
+    min-width: 280px;
+    max-width: 400px;
+    animation: slideIn 0.3s ease-out;
+}
+
+/* Position variants */
+.popup.top-right {
+    top: 20px;
+    right: 20px;
+}
+
+.popup.top-left {
+    top: 20px;
+    left: 20px;
+}
+
+.popup.bottom-right {
+    bottom: 20px;
+    right: 20px;
+}
+
+.popup.bottom-left {
+    bottom: 20px;
+    left: 20px;
+}
+
+/* Type variants */
+.popup.success {
+    background-color: #4CAF50;
+    color: white;
+    border-left: 4px solid #45a049;
+}
+
+.popup.error {
+    background-color: #f44336;
+    color: white;
+    border-left: 4px solid #da190b;
+}
+
+.popup.warning {
+    background-color: #ff9800;
+    color: white;
+    border-left: 4px solid #e68900;
+}
+
+.popup.info {
+    background-color: #2196F3;
+    color: white;
+    border-left: 4px solid #0b7dda;
+}
+
+.popup-title {
+    font-weight: bold;
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+.popup-message {
+    font-size: 14px;
+}
+
+.popup.fade-out {
+    animation: fadeOut 0.3s ease-out forwards;
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+/* Slide out animations based on position */
+.popup.slide-out {
+    animation: slideOut 0.3s ease-out forwards;
+}
+
+.popup.top-left.slide-out,
+.popup.bottom-left.slide-out {
+    animation: slideOutLeft 0.3s ease-out forwards;
+}
+
+@keyframes slideOut {
+    from {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    to {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+}
+
+@keyframes slideOutLeft {
+    from {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    to {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+}
+/* Animation */
+@keyframes slideIn {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Animation for left-side positions */
+.popup.top-left,
+.popup.bottom-left {
+    animation: slideInLeft 0.3s ease-out;
+}
+
+@keyframes slideInLeft {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Center position */
+.popup.center {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: slideInCenter 0.3s ease-out;
+}
+
+/* Center animations */
+@keyframes slideInCenter {
+    from {
+        transform: translate(-50%, -50%) scale(0.7);
+        opacity: 0;
+    }
+    to {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
+    }
+}
+
+/* Update slide-out for center position */
+.popup.center.slide-out {
+    animation: slideOutCenter 0.3s ease-out forwards;
+}
+
+@keyframes slideOutCenter {
+    from {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
+    }
+    to {
+        transform: translate(-50%, -50%) scale(0.7);
+        opacity: 0;
+    }
+}
+
+/* Top-center position */
+.popup.top-center {
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: slideInTopCenter 0.3s ease-out;
+}
+
+/* Top-center animations */
+@keyframes slideInTopCenter {
+    from {
+        transform: translate(-50%, -100%);
+        opacity: 0;
+    }
+    to {
+        transform: translate(-50%, 0);
+        opacity: 1;
+    }
+}
+
+/* Update slide-out for top-center position */
+.popup.top-center.slide-out {
+    animation: slideOutTopCenter 0.3s ease-out forwards;
+}
+
+@keyframes slideOutTopCenter {
+    from {
+        transform: translate(-50%, 0);
+        opacity: 1;
+    }
+    to {
+        transform: translate(-50%, -100%);
+        opacity: 0;
+    }
+}

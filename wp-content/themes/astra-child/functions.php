@@ -41,8 +41,10 @@ function child_enqueue_styles()
 		wp_enqueue_script( 'select2-js', 'https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.8/js/select2.min.js',array('jquery'),CHILD_THEME_ASTRA_CHILD_VERSION,'defer' );
 	}
 	wp_enqueue_style('astra-child-theme-job-page-css', get_stylesheet_directory_uri() . '/assets/css/job.css', array('astra-theme-css'), CHILD_THEME_ASTRA_CHILD_VERSION, 'all');
+	//Toast
+	wp_enqueue_script( 'toast-js', get_stylesheet_directory_uri() . '/utility/toast/toast.js',array('jquery'),CHILD_THEME_ASTRA_CHILD_VERSION,'defer' );
+	wp_enqueue_style( 'toast-css', get_stylesheet_directory_uri() . '/utility/toast/toast.css',array(),CHILD_THEME_ASTRA_CHILD_VERSION,'all' );
 }
-
 add_action('wp_enqueue_scripts', 'child_enqueue_styles', 15);
 
 

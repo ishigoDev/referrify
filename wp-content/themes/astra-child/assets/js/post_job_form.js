@@ -1,14 +1,98 @@
 jQuery(document).ready(function($) {
     $('#location,#job_type,#experience,#category').select2();
+    $('#company-img').on('change', function() {
+        const file = this.files[0];
+        const fileType = file.type;
+        const validTypes = ['image/jpeg', 'image/png'];
+        
+        if (file) {
+            $('#selected-filename').text(file.name);
+        } else {
+            $('#selected-filename').text('');
+        }
+        if (!validTypes.includes(fileType)) {
+            toast({
+                title: 'Error!',
+                message: 'Please upload only PNG or JPEG images',
+                type: 'error',
+                duration: 3000,
+                position: 'top-center'
+            });
+            this.value = '';
+            return false;
+        }
+    });
     $('.referrify-btn').on('click', function(e) {
-        e.preventDefault();
-
+        e.preventDefault();  
+       
         if (!validateForm()) {
             return false;
         }
 
-        // If validation passes, submit the form
-        this.submit();
+        // Get form data
+        const formData = new FormData();
+        formData.append('title', $('#title').val());
+        formData.append('category', $('#category').val());
+        formData.append('location', $('#location').val());
+        formData.append('job_type', $('#job_type').val());
+        formData.append('experience', $('#experience').val());
+        formData.append('salary', $('#salary').val());
+        formData.append('description', $('#description').val());
+        formData.append('company_image', $('#company-img')[0].files[0]);
+        formData.append('action', 'post_job_submission');
+        formData.append('nonce', jobformajax.nonce);
+
+        // Send AJAX request
+        $.ajax({
+            url: jobformajax.ajax_url,
+            type: 'POST',
+            data: formData,
+            processData: false,
+            contentType: false,
+            beforeSend: function() {
+                // Show loading state
+                $('.referrify-btn').prop('disabled', true);
+                $('.referrify-btn').text('Submitting... ');
+                $('.referrify-btn').append('<i class="fa fa-spinner fa-spin"></i>');
+            },
+            success: function(response) {
+                if (response.success) {
+                    toast({
+                        title: 'Success!', 
+                        message: 'Job posted successfully!',
+                        type: 'success',
+                        duration: 3000,
+                        position: 'top-center'
+                    });
+                    // Reset form
+                    $('#title,#salary,#description').val('');
+                    // Reset Select2 fields
+                    $('#location,#job_type,#experience,#category').val('').trigger('change');
+                } else {
+                    toast({
+                        title: 'Error!', 
+                        message: 'Error: ' + response.data || 'Something went wrong ! Please try again later.',
+                        type: 'error',
+                        duration: 3000,
+                        position: 'top-center'
+                    });
+                }
+            },
+            error: function(xhr, status, error) {
+                toast({
+                    title: 'Error!', 
+                    message: 'Error submitting form. Please try again.',
+                    type: 'error',
+                    duration: 3000,
+                    position: 'top-center'
+                });
+            },
+            complete: function() {
+                // Reset button state
+                $('.referrify-btn').prop('disabled', false);
+                $('.referrify-btn').text('Submit');
+            }
+        });
     });
    
     
