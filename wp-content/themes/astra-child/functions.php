@@ -20,6 +20,7 @@ require_once get_stylesheet_directory() . '/shortcodes/jobs_cat_carousel.php';
 require_once get_stylesheet_directory() . '/shortcodes/register_form.php';
 require_once get_stylesheet_directory() . '/utility/woocommerce_revamp.php';
 require_once get_stylesheet_directory() . '/shortcodes/post_job_form.php';
+require_once get_stylesheet_directory() . '/utility_functions.php';
 
 
 
