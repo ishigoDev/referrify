@@ -29,7 +29,7 @@ require_once get_stylesheet_directory() . '/shortcodes/post_job_form.php';
 function child_enqueue_styles()
 {
 	wp_enqueue_style('astra-child-theme-css', get_stylesheet_directory_uri() . '/style.css', array('astra-theme-css'), CHILD_THEME_ASTRA_CHILD_VERSION, 'all');
-	wp_enqueue_style('astra-child-theme-shortcode-css', get_stylesheet_directory_uri() . '/shortcodes/shortcode_styles.css', array('astra-theme-css'), CHILD_THEME_ASTRA_CHILD_VERSION, 'all');
+	wp_enqueue_style('astra-child-theme-shortcode-css', get_stylesheet_directory_uri() . '/assets/css/shortcode_styles.css', array('astra-theme-css'), CHILD_THEME_ASTRA_CHILD_VERSION, 'all');
 	wp_enqueue_script('font-awesome', 'https://kit.fontawesome.com/46ce832a93.js', array(), null, false);
 	wp_enqueue_style('slick-css',  get_stylesheet_directory_uri() . "/assets/slick/slick.css");
 	wp_enqueue_style('slick-theme-css',  get_stylesheet_directory_uri() . "/assets/slick/slick-theme.css");
