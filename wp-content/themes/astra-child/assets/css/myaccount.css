@@ -1,0 +1,82 @@
+.login-container{
+    min-height: 299px;
+}
+
+.login-container .woocommerce{
+    padding-top: 50px;
+}
+
+.woocommerce-account .woocommerce-MyAccount-navigation {
+    float: left;
+    width: 25%;
+}
+.woocommerce-account .woocommerce-MyAccount-content{
+    width: 73%
+}
+
+
+/* Posted Jobs style */
+.price-column {
+    text-align: right;
+}
+.job-title{
+    text-align: left;
+}
+.btn-icon {
+    font-size: 18px;
+    color: #FF6210;
+    margin: 8px;
+}
+
+.btn-delete {
+    color: #dc3545;
+}
+.tablenav {
+    margin: 20px 0;
+}
+
+.tablenav-pages {
+    text-align: right;
+}
+
+.tablenav-pages a,
+.tablenav-pages span {
+    display: inline-block;
+    padding: 6px 10px;
+    margin: 0 4px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    text-decoration: none;
+    color: #FF6210;
+    background: #fff;
+    transition: all 0.3s ease;
+}
+
+.tablenav-pages span.current {
+    background: #FF6210;
+    border-color: #FF6210;
+    color: #fff;
+}
+
+.tablenav-pages a:hover {
+    background: #f5f5f5;
+    border-color: #FF6210;
+}
+
+.tablenav-pages .prev,
+.tablenav-pages .next {
+    font-weight: bold;
+}
+
+/* For mobile responsiveness */
+@media screen and (max-width: 768px) {
+    .tablenav-pages {
+        text-align: center;
+    }
+    
+    .tablenav-pages a,
+    .tablenav-pages span {
+        padding: 5px 9px;
+        margin: 0 2px;
+    }
+}

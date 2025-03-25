@@ -42,3 +42,40 @@ add_action('astra_woo_shop_after_summary_wrap', function () {
 	global $product, $woocommerce;
 	echo '<div class="ast-shop-footer"><div class="salary">' . $product->get_price_html() . ' PA </div></div>';
 }, 20);
+
+
+add_filter('woocommerce_account_menu_items', 'remove_orders_tab', 999);
+
+function remove_orders_tab($items) {
+    unset($items['orders']);
+    // Add the custom menu item
+    $new_items = array();
+    foreach ($items as $key => $value) {
+        if ($key === 'dashboard') {
+            // Insert the custom menu item after the "Dashboard" menu item
+            $new_items[$key] = $value;
+            $new_items['posted-jobs'] = __('Posted Jobs');
+        } else {
+            $new_items[$key] = $value;
+        }
+    }
+    return $new_items;
+}
+
+add_action( 'init', 'posted_jobs_endpoint' );
+function posted_jobs_endpoint() {
+	add_rewrite_endpoint( 'posted-jobs', EP_PAGES );
+}
+
+
+add_action( 'woocommerce_account_posted-jobs_endpoint', 'postedjobs_my_account_endpoint_content' );
+function postedjobs_my_account_endpoint_content() {
+    $template = locate_template('/templates/posted-jobs.php');
+    if ($template) {
+        // Load the template file
+        include $template;
+    } else {
+        // Fallback content if the template is not found
+        echo '<p>' . __('No template found for Posted Jobs.', 'text-domain') . '</p>';
+    }
+}
