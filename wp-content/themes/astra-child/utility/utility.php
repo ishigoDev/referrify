@@ -37,3 +37,21 @@ function handle_draft_job() {
     wp_redirect(wc_get_account_endpoint_url('posted-jobs'));
     exit;
 }
+
+function handle_hired_status() {
+    if (isset($_GET['action']) && $_GET['action'] === 'mark_hired' && isset($_GET['product_id'])) {
+        $product_id = intval($_GET['product_id']);
+        $product = wc_get_product($product_id);
+        
+        if ($product && current_user_can('edit_post', $product_id)) {
+            // Update stock status to out of stock
+            $product->set_stock_status('outofstock');
+            $product->save();
+            
+            // Redirect back to the jobs page
+            wp_redirect(wc_get_account_endpoint_url('posted-jobs'));
+            exit;
+        }
+    }
+}
+add_action('template_redirect', 'handle_hired_status');

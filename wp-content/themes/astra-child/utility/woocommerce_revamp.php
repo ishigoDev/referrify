@@ -54,7 +54,8 @@ function remove_orders_tab($items) {
         if ($key === 'dashboard') {
             // Insert the custom menu item after the "Dashboard" menu item
             $new_items[$key] = $value;
-            $new_items['posted-jobs'] = __('Posted Jobs');
+            $new_items['active-jobs'] = __('Active Jobs');
+			$new_items['posted-jobs'] = __('All Posted Jobs');
         } else {
             $new_items[$key] = $value;
         }
@@ -62,20 +63,21 @@ function remove_orders_tab($items) {
     return $new_items;
 }
 
-add_action( 'init', 'posted_jobs_endpoint' );
-function posted_jobs_endpoint() {
+add_action( 'init', 'active_jobs_endpoint' );
+function active_jobs_endpoint() {
+	add_rewrite_endpoint( 'active-jobs', EP_PAGES );
 	add_rewrite_endpoint( 'posted-jobs', EP_PAGES );
 }
 
 
-add_action( 'woocommerce_account_posted-jobs_endpoint', 'postedjobs_my_account_endpoint_content' );
-function postedjobs_my_account_endpoint_content() {
-    $template = locate_template('/templates/posted-jobs.php');
+add_action( 'woocommerce_account_active-jobs_endpoint', 'activejobs_my_account_endpoint_content' );
+function activejobs_my_account_endpoint_content() {
+    $template = locate_template('/templates/active-jobs.php');
     if ($template) {
         // Load the template file
         include $template;
     } else {
         // Fallback content if the template is not found
-        echo '<p>' . __('No template found for Posted Jobs.', 'text-domain') . '</p>';
+        echo '<p>' . __('No template found for Active Jobs.', 'text-domain') . '</p>';
     }
 }
