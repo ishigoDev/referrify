@@ -80,3 +80,58 @@
         margin: 0 2px;
     }
 }
+
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border-radius: 4px;
+    width: 80%;
+    max-width: 600px;
+}
+
+.modal-actions {
+    margin-top: 20px;
+    text-align: right;
+}
+
+.modal-actions button {
+    margin-left: 10px;
+}
+
+#confirmDelete {
+    background-color: #FF6210;
+    border-color: #FF6210;
+    color: white;
+}
+#cancelDelete{
+    border: 1px solid #FF6210;
+    background-color: #ffffff;
+    color:#FF6210 ;
+}
+.actions-msg{
+    font-weight: 600;
+    font-size: 14px;
+}
+.actions-col{
+    padding:1rem 0.3rem;
+}
+.btn-hired{
+    color:green;
+}
+.btn-edit{
+    color: #0058ff;
+}

@@ -4,6 +4,7 @@ if (!defined('ABSPATH')) {
     exit;
 }
 
+wp_enqueue_script('astra-child-theme-job-listing', get_stylesheet_directory_uri() . '/assets/js/job_list.js', array('jquery'), CHILD_THEME_ASTRA_CHILD_VERSION, true );
 
 $current_page =get_page_number();
 
@@ -19,8 +20,6 @@ $args = array(
 );
 
 $query = new WP_Query($args);
-
-
     ?>
      <div class="wrap">
         <table class="wp-list-table widefat fixed striped">
@@ -77,9 +76,10 @@ $query = new WP_Query($args);
                                     echo (!empty($price)) ? wc_price($price) : '--';
                                 ?>
                             </td>    
-                            <td>
-                                <a href="<?php echo get_edit_post_link(get_the_ID()); ?>"  class="btn-icon"><i class="fas fa-edit"></i></a> |
-                                <a href="<?php echo get_delete_post_link(get_the_ID()); ?>" class="btn-icon btn-delete"><i class="fas fa-trash"></i></a>
+                            <td class="actions-col">
+                                <a href="#" data-hired-url="<?php echo get_delete_post_link(get_the_ID()); ?>" title="<?php _e('Mark as Hired', 'woocommerce'); ?>" class="btn-icon btn-hired hired-job"><i class="fas fa-check"></i></a> |
+                                <a href="<?php echo get_edit_post_link(get_the_ID()); ?>" title="<?php _e('Edit', 'woocommerce'); ?>"  class="btn-icon btn-edit"><i class="fas fa-edit"></i></a> |                                
+                                <a href="#" data-delete-url="<?php echo get_draft_post_link(get_the_ID()); ?>" title="<?php _e('Delete', 'woocommerce'); ?>" class="btn-icon btn-delete delete-job"><i class="fas fa-trash"></i></a>
                             </td>
                         </tr>
                         <?php
@@ -108,6 +108,19 @@ $query = new WP_Query($args);
                         'end_size'  => 1,
                     ));
                 ?>
+            </div>
+        </div>
+    </div>
+    </div>
+   <!-- Delete Modal -->
+    <div id="deleteModal" class="modal">
+        <div class="modal-content">
+            <h3><?php _e('Confirm Deletion', 'woocommerce'); ?></h3>
+            <p style="margin-bottom:0px;"><?php _e('Are you sure you want to delete this job?', 'woocommerce'); ?></p>
+            <p class="actions-msg"><?php _e('This action cannot be irreversible.', 'woocommerce'); ?></p>
+            <div class="modal-actions">
+                <button class="button" id="cancelDelete"><?php _e('Cancel', 'woocommerce'); ?></button>
+                <button class="button button-primary" id="confirmDelete"><?php _e('Delete', 'woocommerce'); ?></button>
             </div>
         </div>
     </div>
