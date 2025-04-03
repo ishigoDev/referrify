@@ -3,13 +3,7 @@
 if (!defined('ABSPATH')) {
     exit;
 }
-
-wp_enqueue_script('astra-child-theme-job-listing', get_stylesheet_directory_uri() . '/assets/js/job_list.js', array('jquery'), CHILD_THEME_ASTRA_CHILD_VERSION, true);
-
 $current_page = get_page_number();
-
-// Example usage:
-$post_page_permalink = get_page_permalink_by_title( "Post Job" ) ?: "#";
 
 // Get the current user ID
 $user_id = get_current_user_id();
@@ -21,13 +15,8 @@ $args = array(
     'posts_per_page' => 15,
     'paged'          => $current_page,
     'author'         => $user_id,
-    'meta_query'     => array(
-        array(
-            'key'     => '_stock_status',
-            'value'   => 'instock',
-            'compare' => '='
-        )
-    )
+    'orderby'        => 'date', // Sort by creation date
+    'order'          => 'DESC', // Newest first
 );
 
 $query = new WP_Query($args);
@@ -52,7 +41,7 @@ if ($query->have_posts()) {
                 <th><?php _e('Location', 'woocommerce'); ?></th>
                 <th><?php _e('Experience', 'woocommerce'); ?></th>
                 <th class="price-column"><?php _e('Salary', 'woocommerce'); ?></th>
-                <th><?php _e('Actions', 'woocommerce'); ?></th>
+                <th><?php _e('Status', 'woocommerce'); ?></th>
             </tr>
         </thead>
         <tbody>
@@ -98,13 +87,14 @@ if ($query->have_posts()) {
                             echo (!empty($price)) ? wc_price($price) : '--';
                             ?>
                         </td>
-                        <td class="actions-col">
-                            <a href="<?php echo add_query_arg(array(
-                                            'action' => 'mark_hired',
-                                            'product_id' => get_the_ID(),
-                                        ), get_permalink()); ?>" title="<?php _e('Mark as Hired', 'woocommerce'); ?>" class="btn-icon btn-hired hired-job"><i class="fas fa-check"></i></a> |
-                            <a href="<?php echo add_query_arg('job_id', get_the_ID(), $post_page_permalink);?>" title="<?php _e('Edit', 'woocommerce'); ?>" class="btn-icon btn-edit"><i class="fas fa-edit"></i></a> |
-                            <a href="#" data-delete-url="<?php echo get_draft_post_link(get_the_ID()); ?>" title="<?php _e('Delete', 'woocommerce'); ?>" class="btn-icon btn-delete delete-job"><i class="fas fa-trash"></i></a>
+                        <td class="status-col">
+                            <?php
+                            if ($job->is_in_stock()) {
+                                echo '<span style="color: blue;">' . __('Active', 'woocommerce') . '</span>';
+                            } else {
+                                echo '<span style="color: green;">' . __('Hired', 'woocommerce') . '</span>';
+                            }
+                            ?>
                         </td>
                     </tr>
             <?php
@@ -136,16 +126,3 @@ if ($query->have_posts()) {
         </div>
     </div>
 </div>
-<!-- Delete Modal -->
-<div id="deleteModal" class="modal">
-    <div class="modal-content">
-        <h3><?php _e('Confirm Deletion', 'woocommerce'); ?></h3>
-        <p style="margin-bottom:0px;"><?php _e('Are you sure you want to delete this job?', 'woocommerce'); ?></p>
-        <p class="actions-msg"><?php _e('This action cannot be irreversible.', 'woocommerce'); ?></p>
-        <div class="modal-actions">
-            <button class="button" id="cancelDelete"><?php _e('Cancel', 'woocommerce'); ?></button>
-            <button class="button button-primary" id="confirmDelete"><?php _e('Delete', 'woocommerce'); ?></button>
-        </div>
-    </div>
-</div>
-<?php

@@ -81,3 +81,15 @@ function activejobs_my_account_endpoint_content() {
         echo '<p>' . __('No template found for Active Jobs.', 'text-domain') . '</p>';
     }
 }
+
+add_action( 'woocommerce_account_posted-jobs_endpoint', 'postedjobs_my_account_endpoint_content' );
+function postedjobs_my_account_endpoint_content() {
+    $template = locate_template('/templates/posted-jobs.php');
+    if ($template) {
+        // Load the template file
+        include $template;
+    } else {
+        // Fallback content if the template is not found
+        echo '<p>' . __('No template found for All Posted Jobs.', 'text-domain') . '</p>';
+    }
+}

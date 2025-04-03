@@ -55,3 +55,28 @@ function handle_hired_status() {
     }
 }
 add_action('template_redirect', 'handle_hired_status');
+
+
+/**
+ * Retrieves the permalink of a page by its title.
+ *
+ * @param string $page_title The title of the page to search for.
+ * @return string|false The permalink of the page if found, or false if not found.
+ */
+function get_page_permalink_by_title( $page_title ) {
+    if ( empty( $page_title ) ) {
+        return false;
+    }
+
+    $query = new WP_Query( array(
+        'post_type'      => 'page',
+        'title'          => $page_title,
+        'posts_per_page' => 1,
+    ) );
+
+    if ( $query->have_posts() ) {
+        return get_permalink( $query->posts[0]->ID );
+    }
+
+    return false; // Return false if page not found
+}
