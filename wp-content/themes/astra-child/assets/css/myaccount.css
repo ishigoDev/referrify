@@ -135,3 +135,10 @@
 .btn-edit{
     color: #0058ff;
 }
+span.job-count{
+    background: #ff620d;
+    color: white;
+    padding: 2px 8px;
+    border-radius: 50%;
+    margin-left: 3px;
+}
