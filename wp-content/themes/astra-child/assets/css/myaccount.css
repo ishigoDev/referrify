@@ -2,16 +2,59 @@
     min-height: 299px;
 }
 
-.login-container .woocommerce{
-    padding-top: 50px;
+.page .entry-content .login-container .woocommerce{
+    max-width: 1550px;
+    margin-left: initial;
+    margin-right: initial;
+}
+
+.login-container .myaccount-banner{
+    min-height: 300px;
+    width: 100%;
+    background-color: var(--ast-global-color-0);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.login-container .myaccount-banner .myaccount-banner-content{
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    padding-top: 60px;
+    padding-left: 8%; /* Changed from 134px to 8% for better responsiveness */
+}
+.woocommerce-MyAccount-navigation{
+    display:none;
 }
 
 .woocommerce-account .woocommerce-MyAccount-navigation {
     float: left;
     width: 25%;
+    display: none;
 }
 .woocommerce-account .woocommerce-MyAccount-content{
-    width: 73%
+    width: 84%;
+    margin-left: auto;
+    margin-right: auto;
+    float: none;
+    padding-bottom: 25px;
+    padding-top: 50px;
+}
+.myaccount-banner-nav{
+    display: flex;
+    margin-top: 15.9px;
+}
+.myaccount-banner-nav .woocommerce-MyAccount-navigation-link{
+    margin-right: 8px;
+    background-color: #ffffffb3;
+    border: none;
+}
+.myaccount-banner-nav .woocommerce-MyAccount-navigation-link.is-active{
+    background-color: #ffffff;
+}
+.myaccount-banner-nav .woocommerce-MyAccount-navigation-link:hover{
+    background-color: #ffffff;
 }
 
 
@@ -81,6 +124,33 @@
     }
 }
 
+@media screen and (max-width: 600px) {
+    .login-container .myaccount-banner .myaccount-banner-content{
+        padding-left: 5%;
+    }
+    .myaccount-banner-nav .woocommerce-MyAccount-navigation-link a{
+        font-size:14px;
+    }
+    .woocommerce-account .woocommerce-MyAccount-content{
+        width: 89%;
+    }
+}
+@media screen and (max-width: 450px) {
+    .login-container .myaccount-banner .myaccount-banner-content{
+        padding-top:40px;
+        padding-right:5%;
+    }
+    .myaccount-banner-nav{
+        flex-direction: column;
+        margin-bottom: 15.9px;
+    }
+    .myaccount-banner-nav .woocommerce-MyAccount-navigation-link{
+        margin-right: 0;
+    }
+    .login-container .myaccount-banner .myaccount-banner-content:nth-child(2){
+        padding-top:0px;
+    }
+}
 
 /* Modal Styles */
 .modal {
@@ -128,6 +198,7 @@
 }
 .actions-col{
     padding:1rem 0.3rem;
+    text-align: center;
 }
 .btn-hired{
     color:green;
@@ -136,7 +207,7 @@
     color: #0058ff;
 }
 span.job-count{
-    background: #ff620d;
+    background: var(--wp--preset--color--luminous-vivid-orange);
     color: white;
     padding: 1px 7px;
     border-radius: 50%;
