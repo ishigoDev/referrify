@@ -135,3 +135,40 @@ function tooltip_cb($attrs)
     return ob_get_clean();
 }
 add_shortcode('tooltip', 'tooltip_cb');
+
+function card($atts) {    
+     $defaults = array(
+        'image' => '',
+        'title' => '',
+        'content' => '',
+        'class' => '',
+        'link' => '',
+        'btn-text' => '',
+    );
+    // Merge user provided parameters with defaults
+    $args = shortcode_atts($defaults, $atts);
+        wp_enqueue_style(
+        'referrify-card-style',
+        get_stylesheet_directory_uri() . '/assets/css/card.css',
+        array(),
+        '1.0.0'
+    );
+    ob_start();
+    ?>
+    <div class="referrify-card">
+        <div class="card-header">
+        <?php if (!empty($args['image'])) : ?>
+            <img src="<?php echo esc_url($args['image']); ?>" alt="<?php echo esc_attr($args['title']); ?>" class="card-image" />
+        <?php endif; ?>
+        <h5><?php echo esc_html($args['title']); ?></h5>
+        </div>
+        <div class="card-content">
+            <p class="card-text"><?php echo esc_html($args['content']); ?></p>  
+            <a href="<?php echo esc_url($args['link']);?>" class="card-btn"><?php echo $args['btn-text']; ?></a>
+        </div>
+    </div>
+    <?php
+    return ob_get_clean();
+}
+
+add_shortcode('referrify_card', 'card');

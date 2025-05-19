@@ -50,40 +50,13 @@ function remove_orders_tab($items) {
     unset($items['orders']);
     // Add the custom menu item
     $new_items = array();
-
-    // Get count of active jobs
-    $args = array(
-        'post_type'      => 'product',
-        'post_status'    => 'publish',
-        'author'         => get_current_user_id(),
-        'meta_query'     => array(
-            array(
-                'key'     => '_stock_status',
-                'value'   => 'instock',
-                'compare' => '='
-            )
-        ),
-        'posts_per_page' => -1,
-    );
-    $active_jobs_query = new WP_Query($args);
-    $active_jobs_count = $active_jobs_query->found_posts;
-
-    // Get count of all posted jobs
-    $all_jobs_args = array(
-        'post_type'      => 'product',
-        'post_status'    => 'publish',
-        'author'         => get_current_user_id(),
-        'posts_per_page' => -1,
-    );
-    $all_jobs_query = new WP_Query($all_jobs_args);
-    $all_jobs_count = $all_jobs_query->found_posts;
-
+    
     foreach ($items as $key => $value) {
         if ($key === 'dashboard') {
             // Insert the custom menu item after the "Dashboard" menu item
             $new_items[$key] = $value;
-            $new_items['active-jobs'] = sprintf(__('Active Jobs (%d)'), $active_jobs_count);
-            $new_items['posted-jobs'] = sprintf(__('All Posted Jobs (%d)'), $all_jobs_count);
+            $new_items['active-jobs'] = sprintf(__('Active Jobs'));
+            $new_items['posted-jobs'] = sprintf(__('All Posted Jobs'));
         } else {
             $new_items[$key] = $value;
         }

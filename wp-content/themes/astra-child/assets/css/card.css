@@ -1,0 +1,53 @@
+.referrify-card-container{
+  display: flex;
+}
+.referrify-card {
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 15px 20px;
+  margin: 10px 0;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  width:calc(100%/4 - 20px);
+  height:240px;
+  margin-left: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+.referrify-card .card-content{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card-content .card-text{
+  font-size: 30px;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+.referrify-card .card-header{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.referrify-card .card-header h5{
+  margin-top: 12px;
+}
+
+.referrify-card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+.referrify-card .card-image{
+width: 60px;
+height: 60px;
+}
+
+.referrify-card .card-content .card-btn{
+border-radius: 10px;
+background-color: #ff620d;
+color: white;
+padding: 5px 15px;
+}
