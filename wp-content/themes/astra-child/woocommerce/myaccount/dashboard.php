@@ -69,8 +69,8 @@ $allowed_html = array(
     $all_jobs_count = $all_jobs_query->found_posts;
 ?>
 <div class="referrify-card-container">
-	<?php echo do_shortcode("[referrify_card image='".get_site_url()."/wp-content/uploads/2025/05/active.svg' title='Active Jobs' link='/my-account/active-jobs/' btn-text='View Jobs' content='".$active_jobs_count."']"); ?>
-	<?php echo do_shortcode("[referrify_card image='".get_site_url()."/wp-content/uploads/2025/05/posted-jobs.svg' title='Posted Jobs' link='/my-account/posted-jobs/' btn-text='View Jobs' content='".$all_jobs_count."']");  ?>
+	<?php echo do_shortcode("[referrify_card image='".get_site_url()."/wp-content/uploads/2025/05/active.svg' title='Active Jobs' link='".get_site_url()."/my-account/active-jobs/' btn-text='View Jobs' content='".$active_jobs_count."']"); ?>
+	<?php echo do_shortcode("[referrify_card image='".get_site_url()."/wp-content/uploads/2025/05/posted-jobs.svg' title='Posted Jobs' link='".get_site_url()."/my-account/posted-jobs/' btn-text='View Jobs' content='".$all_jobs_count."']");  ?>
 </div>
 
 <p>
