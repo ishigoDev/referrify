@@ -94,3 +94,32 @@ function postedjobs_my_account_endpoint_content() {
         echo '<p>' . __('No template found for All Posted Jobs.', 'text-domain') . '</p>';
     }
 }
+
+add_action('woocommerce_account_content','tabs_heading',1);
+function tabs_heading() {
+    $endpoints = [
+        'active-jobs' => 'Active Jobs',
+        'posted-jobs' => 'Posted Jobs',
+        'edit-account' => 'Account Details',
+    ];
+    
+    // Get current endpoint from URL path
+    $current_url = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
+    $current_endpoint = '';
+    
+    // Check endpoints more efficiently
+    foreach ($endpoints as $endpoint => $title) {
+        if (strpos($current_url, '/' . $endpoint) !== false) {
+            $current_endpoint = $endpoint;
+            break;
+        }
+    }
+    
+    // Get heading from endpoints array or default to Dashboard
+    $heading = isset($endpoints[$current_endpoint]) ? $endpoints[$current_endpoint] : 'Dashboard';
+    
+    printf(
+        '<h4 class="posted-jobs-heading">%s</h4>', 
+        esc_html($heading)
+    );
+}
